@@ -1,19 +1,12 @@
 package com.example.common.utils
 
-object ResponseUtils {
-    fun success(data: Any?): Map<String, Any?> {
-        return mapOf(
-            "status" to "SUCCESS",
-            "message" to "요청이 정상 처리되었습니다.",
-            "data" to data
-        )
-    }
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-    fun failure(message: String, errorCode: String): Map<String, Any> {
-        return mapOf(
-            "status" to "FAIL",
-            "message" to message,
-            "errorCode" to errorCode
-        )
+object DateUtils {
+    private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+
+    fun nowFormatted(): String {
+        return LocalDateTime.now().format(formatter)
     }
 }

@@ -2,8 +2,6 @@ package com.example.common
 
 import com.example.common.auth.JwtUtil
 import com.example.common.utils.DateUtils
-import com.example.common.utils.ResponseUtils
-import org.springframework.http.HttpStatus
 
 fun main() {
     println("=== Common Utils Sample Test ===")
@@ -19,10 +17,4 @@ fun main() {
     val formattedDate = DateUtils.nowFormatted()
     println("Formatted Date: $formattedDate")
 
-    // 공통 응답 처리 테스트
-    val successResponse = ResponseUtils.success("Operation successful", mapOf("key" to "value"))
-    println("Success Response: $successResponse")
-
-    val errorResponse = ResponseUtils.error("Something went wrong", HttpStatus.INTERNAL_SERVER_ERROR)
-    println("Error Response: $errorResponse")
 }
