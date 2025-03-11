@@ -7,10 +7,16 @@ plugins {
 }
 
 group = "com.github.giwon1130"
-version = "1.1.4"
+version = "1.1.6"
 
 repositories {
     mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.2.2") // Spring Boot BOM 적용
+    }
 }
 
 dependencies {
@@ -25,10 +31,10 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("jitpack") {
-            from(components["java"]) // 중복 jar 제거
+            from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.1.4"
+            version = "1.1.6"
         }
     }
 }
