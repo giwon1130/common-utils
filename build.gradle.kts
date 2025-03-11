@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.github.giwon1130"
-version = "1.1.6"
+version = "1.1.7"
 
 repositories {
     mavenCentral()
@@ -34,7 +34,7 @@ publishing {
             from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.1.6"
+            version = "1.1.7"
         }
     }
 }
