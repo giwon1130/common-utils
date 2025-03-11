@@ -8,10 +8,10 @@ plugins {
 }
 
 group = "com.github.giwon1130"
-version = "1.0.8"
+version = "1.1.1"
 
 repositories {
-    mavenCentral() // ✅ JitPack이 의존성을 찾을 수 있도록 설정
+    mavenCentral() // JitPack이 의존성을 찾을 수 있도록 설정
 }
 
 dependencyManagement {
@@ -26,7 +26,7 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5") // JSON 처리
 
-    // ✅ Spring Security & Web (Servlet API 사용을 위해 필요!)
+    // Spring Security & Web (Servlet API 사용을 위해 필요!)
     implementation("org.springframework.boot:spring-boot-starter-web:3.3.6")
     implementation("org.springframework.boot:spring-boot-starter-security:3.3.6")
 }
@@ -37,7 +37,11 @@ publishing {
             from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.0.8"
+            version = "1.1.1"
+
+            // ✅ 소스 코드 포함 (JitPack에서 패키징 가능하도록)
+            artifact(tasks.getByName("jar"))
         }
+
     }
 }
