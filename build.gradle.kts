@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.github.giwon1130"
-version = "1.1.1"
+version = "1.1.3"
 
 repositories {
     mavenCentral() // JitPack이 의존성을 찾을 수 있도록 설정
@@ -37,11 +37,13 @@ publishing {
             from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.1.1"
+            version = "1.1.4"
 
-            // ✅ 소스 코드 포함 (JitPack에서 패키징 가능하도록)
-            artifact(tasks.getByName("jar"))
+            // ✅ 중복 JAR 생성 방지
+            artifact(tasks.getByName("jar")) {
+                classifier = ""
+            }
         }
-
     }
 }
+
