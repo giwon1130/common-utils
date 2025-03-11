@@ -1,4 +1,4 @@
-package com.example.common.auth
+package com.giwon1130.common.auth
 
 import jakarta.servlet.FilterChain
 import jakarta.servlet.ServletException
@@ -24,8 +24,8 @@ class JwtAuthenticationFilter(
     ) {
         val token = resolveToken(request)
 
-        if (token != null && jwtUtil.validateToken(token)) {
-            val username = jwtUtil.extractEmail(token) // JWT에서 유저 이메일 가져오기
+        if (token != null && JwtUtil.validateToken(token)) {
+            val username = JwtUtil.extractEmail(token) // JWT에서 유저 이메일 가져오기
             val userDetails: UserDetails = userDetailsService.loadUserByUsername(username)
 
             val authentication = UsernamePasswordAuthenticationToken(userDetails, null, userDetails.authorities)

@@ -1,6 +1,6 @@
-package com.example.common.exception
+package com.giwon1130.common.exception
 
-import com.example.common.response.ErrorResponse
+import com.giwon1130.common.response.ErrorResponse
 import org.slf4j.LoggerFactory
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ExceptionHandler

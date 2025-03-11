@@ -1,6 +1,6 @@
-package com.example.common.config
+package com.giwon1130.common.config
 
-import com.example.common.auth.JwtUtil
+import com.giwon1130.common.auth.JwtUtil
 import jakarta.annotation.PostConstruct
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Configuration

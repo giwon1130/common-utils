@@ -1,4 +1,4 @@
-package com.example.common.response
+package com.giwon1130.common.response
 
 data class CommonResponse<T>(
     val status: String = "SUCCESS",

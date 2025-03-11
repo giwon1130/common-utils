@@ -1,6 +1,6 @@
-package com.example.common.response
+package com.giwon1130.common.response
 
-import com.example.common.exception.ErrorCode
+import com.giwon1130.common.exception.ErrorCode
 
 data class ErrorResponse(
     val status: String = "FAIL",

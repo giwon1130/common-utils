@@ -1,4 +1,4 @@
-package com.example.common.auth
+package com.giwon1130.common.auth
 
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
