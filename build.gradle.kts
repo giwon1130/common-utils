@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.github.giwon1130"
-version = "1.0.5"
+version = "1.0.6"
 
 repositories {
     mavenCentral()
@@ -20,7 +20,7 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5") // JSON 처리
 
-    // Spring Security (웹 기능 없이 보안 기능만 사용)
+    // Spring Security
     implementation("org.springframework.boot:spring-boot-starter-security")
 }
 
@@ -30,7 +30,7 @@ publishing {
             from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.0.5"
+            version = "1.0.6"
         }
     }
 }
