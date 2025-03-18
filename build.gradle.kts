@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.github.giwon1130"
-version = "1.1.7"
+version = "1.2.0"
 
 repositories {
     mavenCentral()
@@ -26,6 +26,18 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // Lombok
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+
+    // Validation
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+
+    // JPA & Database
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.postgresql:postgresql:42.7.5")
+
 }
 
 publishing {
@@ -34,7 +46,7 @@ publishing {
             from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.1.7"
+            version = "1.2.0"
         }
     }
 }
