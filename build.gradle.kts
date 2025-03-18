@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.github.giwon1130"
-version = "1.3.8"
+version = "1.3.9"
 
 repositories {
     mavenCentral()
@@ -41,6 +41,12 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.postgresql:postgresql:42.7.5")
 
+    // Redis
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
+
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0") // ✅ JAXB API 추가
+    implementation("org.glassfish.jaxb:jaxb-runtime:4.0.0") // ✅ JAXB Runtime 추가
+
 }
 
 publishing {
@@ -49,7 +55,7 @@ publishing {
             from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.3.8"
+            version = "1.3.9"
         }
     }
 }

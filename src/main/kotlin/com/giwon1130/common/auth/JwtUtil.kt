@@ -3,6 +3,7 @@ package com.giwon1130.common.auth
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
+import jakarta.xml.bind.DatatypeConverter
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import java.util.*
@@ -40,7 +41,7 @@ class JwtUtil(
     }
 
     private fun getSigningKey(): SecretKeySpec {
-        val keyBytes = Base64.getDecoder().decode(secretKey)
+        val keyBytes = DatatypeConverter.parseBase64Binary(secretKey)
         return SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.jcaName)
     }
 
