@@ -3,11 +3,12 @@ plugins {
     `maven-publish`
     kotlin("jvm") version "1.9.25"
     kotlin("plugin.spring") version "1.9.25"
+    kotlin("plugin.jpa") version "1.9.25"
     id("io.spring.dependency-management") version "1.1.7"
 }
 
 group = "com.github.giwon1130"
-version = "1.2.0"
+version = "1.3.0"
 
 repositories {
     mavenCentral()
@@ -46,7 +47,7 @@ publishing {
             from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.2.0"
+            version = "1.3.0"
         }
     }
 }
