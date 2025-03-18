@@ -4,11 +4,11 @@ import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.stereotype.Component
+import org.springframework.stereotype.Service
 import java.util.*
 import javax.crypto.spec.SecretKeySpec
 
-@Component
+@Service
 class JwtUtil(
     @Value("\${jwt.secret}") private val secretKey: String,
     @Value("\${jwt.expiration}") private val expirationMs: Long
