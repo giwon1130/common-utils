@@ -1,4 +1,4 @@
 # src/main/resources/application.yml
 jwt:
-  secret: "this-is-a-very-secure-and-long-secret-key-should-be-at-least-32-characters"
+  secret: "thisisaverysecureandlongsecretkeyforjwt123456"
   expiration: 3600000 # 1시간 (밀리초)
