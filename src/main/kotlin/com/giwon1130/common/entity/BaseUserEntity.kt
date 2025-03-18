@@ -13,7 +13,7 @@ abstract class BaseUserEntity(
     open val email: String,
 
     @Column(nullable = false)
-    open var password: String,
+    open val password: String,
 
     @Column(nullable = false)
     open val name: String,
@@ -29,18 +29,16 @@ abstract class BaseUserEntity(
     open var updatedAt: LocalDateTime = LocalDateTime.now(),
 
     @Column(nullable = false)
-    open var isDeleted: Boolean = false, // 삭제 여부 (논리 삭제)
+    open var isDeleted: Boolean = false,
 
-    @Column(nullable = true)
-    open var deletedAt: LocalDateTime? = null // 삭제 처리 시간
+    open var deletedAt: LocalDateTime? = null
 ) {
-
     @PreUpdate
     fun preUpdate() {
         updatedAt = LocalDateTime.now()
     }
 
-    fun delete() {
+    fun softDelete() {
         isDeleted = true
         deletedAt = LocalDateTime.now()
     }
