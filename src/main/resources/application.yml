@@ -1,4 +1,4 @@
 # src/main/resources/application.yml
 jwt:
-  secret: "this_is_a_secret_key"
+  secret: "this_is_a_secret_key_this-is-my-very-secure-and-long-secret-key"
   expiration: 3600000 # 1시간 (밀리초)

@@ -1,3 +1,12 @@
+제공하는 기능 정보
+1. 공통 사용자 엔티티
+2. JWT 관련 Util
+   3. JWT 토큰 생성 (createToken)
+      JWT 토큰 검증 (validateToken)
+      토큰에서 사용자 정보 추출 (getUsernameFromToken)
+      JWT 관련 예외 공통 처리
+
+
 # Common Utils
 
 This repository contains shared utilities for multiple projects, including authentication, exception handling, logging, and general utilities.
