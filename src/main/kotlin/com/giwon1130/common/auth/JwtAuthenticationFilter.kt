@@ -8,9 +8,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
 import java.io.IOException
 
+@Component
 class JwtAuthenticationFilter(
     private val jwtUtil: JwtUtil,
     private val userDetailsService: UserDetailsService
@@ -24,12 +26,12 @@ class JwtAuthenticationFilter(
     ) {
         val token = resolveToken(request)
 
-        if (token != null && JwtUtil.validateToken(token)) {
-            val username = JwtUtil.extractEmail(token) // JWT에서 유저 이메일 가져오기
+        if (token != null && jwtUtil.validateToken(token)) {
+            val username = jwtUtil.extractEmail(token)
             val userDetails: UserDetails = userDetailsService.loadUserByUsername(username)
 
             val authentication = UsernamePasswordAuthenticationToken(userDetails, null, userDetails.authorities)
-            SecurityContextHolder.getContext().authentication = authentication //
+            SecurityContextHolder.getContext().authentication = authentication
         }
 
         filterChain.doFilter(request, response)
