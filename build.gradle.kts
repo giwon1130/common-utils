@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.github.giwon1130"
-version = "1.4.2"
+version = "1.4.3"
 
 repositories {
     mavenCentral()
@@ -47,6 +47,11 @@ dependencies {
     implementation("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
     implementation("org.glassfish.jaxb:jaxb-runtime:4.0.0")
 
+    // logging
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")	// Kotlin-Logging (SLF4J를 래핑)
+    implementation("org.slf4j:slf4j-api:2.0.7")	// SLF4J (kotlin-logging이 필요로 하는 로깅 인터페이스)
+    implementation("ch.qos.logback:logback-classic:1.4.14")	// Logback (실제 로그를 출력하는 구현체)
+
 }
 
 publishing {
@@ -55,7 +60,7 @@ publishing {
             from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.4.2"
+            version = "1.4.3"
         }
     }
 }
