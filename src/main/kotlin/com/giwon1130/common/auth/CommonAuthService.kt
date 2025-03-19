@@ -9,7 +9,7 @@ import com.giwon1130.common.exception.ErrorCode
 import mu.KotlinLogging
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
-import sia.bmoa.application.dto.LoginResponse
+import com.giwon1130.common.dto.LoginResponse
 
 @Service
 class CommonAuthService(

@@ -1,4 +1,4 @@
-package sia.bmoa.application.dto
+package com.giwon1130.common.dto
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import io.swagger.v3.oas.annotations.media.Schema
