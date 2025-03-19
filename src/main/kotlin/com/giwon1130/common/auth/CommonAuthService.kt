@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service
 import sia.bmoa.application.dto.LoginResponse
 
 @Service
-class AuthService(
+class CommonAuthService(
     private val userRepository: UserRepositoryInterface,
     private val passwordEncoder: PasswordEncoder,
     private val jwtUtil: JwtUtil,
