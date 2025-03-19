@@ -31,11 +31,11 @@
     <logger name="org.springframework" level="WARN"/>
 
     <!-- 공통모듈 로그 -->
-    <logger name="com.giwon1130" level="DEBUG"/> <!-- 공통모듈 기본 DEBUG -->
+    <logger name="com.giwon1130" level="INFO"/> <!-- 공통모듈 기본 DEBUG -->
 
     <!-- 프로젝트별 로그 설정 -->
-    <logger name="sia.bmoa" level="DEBUG"/> <!-- BMOA 프로젝트 -->
-    <logger name="sia.nk" level="DEBUG"/> <!-- nK 프로젝트 -->
+    <logger name="sia.bmoa" level="INFO"/> <!-- BMOA 프로젝트 -->
+    <logger name="sia.nk" level="INFO"/> <!-- nK 프로젝트 -->
 
     <!-- 기본 로그 레벨 설정 -->
     <root level="DEBUG"> <!-- 개발 환경에서는 기본 DEBUG -->
