@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.github.giwon1130"
-version = "1.4.4"
+version = "1.4.5"
 
 repositories {
     mavenCentral()
@@ -52,6 +52,9 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.7")	// SLF4J (kotlin-logging이 필요로 하는 로깅 인터페이스)
     implementation("ch.qos.logback:logback-classic:1.4.14")	// Logback (실제 로그를 출력하는 구현체)
 
+    // swagger
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
+
 }
 
 publishing {
@@ -60,7 +63,7 @@ publishing {
             from(components["java"])
             groupId = "com.github.giwon1130"
             artifactId = "common-utils"
-            version = "1.4.4"
+            version = "1.4.5"
         }
     }
 }
