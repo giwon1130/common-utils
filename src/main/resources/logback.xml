@@ -1,0 +1,46 @@
+<configuration>
+
+    <!-- 콘솔 출력 설정 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} %highlight([%level]) %cyan(%logger{36}) - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- 파일 출력 설정 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/app.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/app-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Hibernate SQL 로그 (색상 적용) -->
+    <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
+
+    <!-- Spring 로그 설정 -->
+    <logger name="org.springframework" level="WARN"/>
+
+    <!-- 공통모듈 로그 -->
+    <logger name="com.giwon1130" level="DEBUG"/> <!-- 공통모듈 기본 DEBUG -->
+
+    <!-- 프로젝트별 로그 설정 -->
+    <logger name="sia.bmoa" level="DEBUG"/> <!-- BMOA 프로젝트 -->
+    <logger name="sia.nk" level="DEBUG"/> <!-- nK 프로젝트 -->
+
+    <!-- 기본 로그 레벨 설정 -->
+    <root level="DEBUG"> <!-- 개발 환경에서는 기본 DEBUG -->
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
